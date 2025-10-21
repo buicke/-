@@ -1,0 +1,150 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f7fb;
+  --card-bg: #ffffff;
+  --accent: #ff6b6b;
+  --accent-dark: #d64545;
+  --text-main: #2d3142;
+  --text-muted: #6c7a89;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: var(--text-main);
+}
+
+.app {
+  width: min(420px, 100%);
+}
+
+.timer-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 1rem;
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+
+.phase {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 107, 107, 0.12);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.phase.break {
+  background: rgba(111, 207, 151, 0.18);
+  color: #2f9e44;
+}
+
+.display {
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  font-variant-numeric: tabular-nums;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  padding: 0.75rem 1.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:focus {
+  outline: 3px solid rgba(255, 107, 107, 0.4);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+button.primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 12px 20px rgba(255, 107, 107, 0.25);
+}
+
+button.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+button.primary:active:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+button.secondary {
+  background: #eef2f8;
+  color: var(--text-main);
+}
+
+button.secondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(45, 49, 66, 0.1);
+}
+
+.stats {
+  margin-top: 1.8rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.stats .count {
+  display: inline-block;
+  margin-left: 0.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.hint {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121417;
+    --card-bg: #1b1f24;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+  }
+
+  button.secondary {
+    background: #2d3440;
+  }
+
+  .phase.break {
+    background: rgba(76, 201, 240, 0.18);
+    color: #74c0fc;
+  }
+}

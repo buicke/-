@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ポモドーロタイマー</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="timer-card">
+        <h1 class="title">ポモドーロタイマー</h1>
+        <div class="phase" id="phase">作業</div>
+        <div class="display" id="time-display">25:00</div>
+        <div class="controls">
+          <button id="start-stop" class="primary">スタート</button>
+          <button id="reset" class="secondary">リセット</button>
+        </div>
+        <div class="stats">
+          <span class="label">完了した作業:</span>
+          <span id="work-count" class="count">0</span>
+        </div>
+        <p class="hint">25分作業・5分休憩のシンプルなサイクルです。</p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
